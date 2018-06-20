@@ -3,50 +3,50 @@ services:
 
   php5.3-fpm:
     build:
-      args:
-        PHP_VERSION: ${PHP53_VERSION}
-        PHP_SHA256: "${PHP53_SHA256}"
-        GPG_KEYS: "${PHP53_GPG_KEYS}"
-      context: ../images/php/fpm
+#      args:
+#        PHP_VERSION: ${PHP53_VERSION}
+#        PHP_SHA256: "${PHP53_SHA256}"
+#        GPG_KEYS: "${PHP53_GPG_KEYS}"
+      context: ../images/php/fpm/php5.3
       dockerfile: Dockerfile
     image: ${REGISTRY}protopopys/php:${PHP53_VERSION}-fpm-alpine3.7
 
   php5.6-fpm:
     build:
-      args:
-        PHP_VERSION: ${PHP56_VERSION}
-        PHP_SHA256: "${PHP56_SHA256}"
-        GPG_KEYS: "${PHP56_GPG_KEYS}"
-      context: ../images/php/fpm
+#      args:
+#        PHP_VERSION: ${PHP56_VERSION}
+#        PHP_SHA256: "${PHP56_SHA256}"
+#       GPG_KEYS: "${PHP56_GPG_KEYS}"
+      context: ../images/php/fpm/php5.6
       dockerfile: Dockerfile
     image: ${REGISTRY}protopopys/php:${PHP56_VERSION}-fpm-alpine3.7
 
   php7.0-fpm:
     build:
-      args:
-        PHP_VERSION: ${PHP70_VERSION}
-        GPG_KEYS: "${PHP70_GPG_KEYS}"
-        PHP_SHA256: "${PHP70_SHA256}"
-      context: ../images/php/fpm
+#      args:
+#        PHP_VERSION: ${PHP70_VERSION}
+#        GPG_KEYS: "${PHP70_GPG_KEYS}"
+#        PHP_SHA256: "${PHP70_SHA256}"
+      context: ../images/php/fpm/php7.0
       dockerfile: Dockerfile
     image: ${REGISTRY}protopopys/php:${PHP70_VERSION}-fpm-alpine3.7
 
   php7.1-fpm:
     build:
-      args:
-        PHP_VERSION: ${PHP71_VERSION}
-        GPG_KEYS: "${PHP71_GPG_KEYS}"
-        PHP_SHA256: "${PHP71_SHA256}"
-      context: ../images/php/fpm
+#      args:
+#        PHP_VERSION: ${PHP71_VERSION}
+#        GPG_KEYS: "${PHP71_GPG_KEYS}"
+#        PHP_SHA256: "${PHP71_SHA256}"
+      context: ../images/php/fpm/php7.1
       dockerfile: Dockerfile
     image: ${REGISTRY}protopopys/php:${PHP71_VERSION}-fpm-alpine3.7
 
   php7.2-fpm:
     build:
-      args:
-        PHP_VERSION: ${PHP72_VERSION}
-        GPG_KEYS: "${PHP72_GPG_KEYS}"
-        PHP_SHA256: "${PHP72_SHA256}"
-      context: ../images/php/fpm
+#      args:
+#        PHP_VERSION: ${PHP72_VERSION}
+#        GPG_KEYS: "${PHP72_GPG_KEYS}"
+#       PHP_SHA256: "${PHP72_SHA256}"
+      context: ../images/php/fpm/php7.2
       dockerfile: Dockerfile
     image: ${REGISTRY}protopopys/php:${PHP72_VERSION}-fpm-alpine3.7

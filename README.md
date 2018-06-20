@@ -2,7 +2,6 @@
 
 Deploys very small php-fpm images based on alpine 3.7 to your machine using docker-compose.
 
-One Dockerfile for all.
 
 ## Pre-requisites
 
