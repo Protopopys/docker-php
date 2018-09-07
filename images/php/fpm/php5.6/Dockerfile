@@ -13,8 +13,8 @@ ARG PHP_URL="https://secure.php.net/get/php-${PHP_VERSION}.tar.xz/from/this/mirr
 ARG PHP_ASC_URL="https://secure.php.net/get/php-${PHP_VERSION}.tar.xz.asc/from/this/mirror"
 ARG PHP_SHA256=18f536bf548e909b4e980379d0c4e56d024b2b1eb1c9768fd169360491f1d6dd 
 ARG PHP_MD5
-ARG PHP_USER=daemon
-ARG PHP_GROUP=daemon
+ARG PHP_USER=www-data
+ARG PHP_GROUP=www-data
 ENV PHP_INI_DIR /usr/local/etc/php
 ENV PHP_EXTRA_CONFIGURE_ARGS --enable-fpm --with-fpm-user=${PHP_USER} --with-fpm-group=${PHP_GROUP} --disable-cgi
 ENV PHP_CFLAGS="-fstack-protector-strong -fpic -fpie -O2"
@@ -31,6 +31,9 @@ ENV PHPIZE_DEPS \
 		pkgconf \
 		re2c
 COPY docker-php-* /usr/local/bin/
+RUN set -x \
+	&& addgroup -g 82 -S www-data \
+	&& adduser -u 82 -D -S -G www-data www-data
 #
 #Installing base packages
 #
